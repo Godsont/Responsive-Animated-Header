@@ -1,0 +1,305 @@
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:"Raleway", sans-serif;
+}
+
+p {
+  margin: 24px 0;
+}
+
+/* Containers */
+
+.container {
+  max-width: 1200px;
+  margin:0 auto;
+}
+
+.header-container {
+  position: absolute;
+  width:100%;
+  margin-top: -200px;
+  transition: all .4s;
+}
+
+.header-container header {
+  margin-top: 200px;
+}
+
+.header-container.fixed {
+  position: fixed;
+  margin-top: 0px;
+  right:0;
+  left:0;
+  background:#fff;
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.5);
+}
+
+.header-container.fixed header {
+  margin-top: 0;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+header.scrolled {
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header.scrolled .heading {
+  box-shadow: unset;
+  flex:1;
+}
+
+header.scrolled h1 {
+  font-size: 18px;
+  padding: 0;
+}
+
+header.scrolled .menu-items {
+  background:#fff;
+  flex:3;
+}
+
+.heading {
+  padding:24px;
+  box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.5);
+  z-index:1;
+}
+
+.heading h1 {
+  padding: 0 24px;
+}
+
+/* Menu Items */
+
+.menu-items {
+  background:#eee;
+}
+
+.menu-items .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.menu-items ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu-items ul li {
+  padding: 0 24px;
+}
+
+.menu-items a {
+  color:black;
+  text-decoration: none;
+}
+
+.menu-items .container {
+  position: relative;
+}
+
+
+/* Search Box */
+
+.search-icon-desktop {
+  cursor: pointer;
+}
+
+.searchbox-desktop {
+  position: absolute;
+  right:0;
+  top: 67px;
+  opacity: 0;
+  pointer-events: none;
+  transform: all .4s;
+}
+
+.searchbox-desktop.active {
+  pointer-events: auto;
+  opacity: 1; 
+}
+
+.searchbox-desktop input[type="text"] {
+  height: 48px;
+  width:300px;
+  border:none;
+  border-bottom: 1px solid #eee;
+  padding: 16px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+.searchbox-desktop input[type="text"]:focus {
+  outline: none;
+}
+
+/* Main */
+
+main {
+  padding: 180px 100px 0 100px;
+  line-height: 2;
+}
+
+main img {
+  display: block;
+  width:100%;
+  margin:0 auto;
+}
+
+main h2 {
+  padding: 16px 0;
+}
+
+
+/* Hide Mobile Menu */
+
+.mobile-header,
+.mobile-menu-items,
+.searchbox-mobile {
+  display:none;
+}
+
+
+/* Media Queries */
+
+@media(max-width:900px) {
+  main {
+    padding:24px;
+    padding-top:100px;
+  }
+
+  main h2 {
+    padding:0;
+  }
+
+  .header-container {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+    position:fixed;
+    width:100%;
+    z-index: 100;
+    background:white;
+  }
+
+  .mobile-header .menu-icon,
+  .mobile-header .search-icon,
+  .mobile-header .fa-times {
+    cursor: pointer;
+  }
+
+  .mobile-header header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+    align-items: center;
+    padding: 0 32px;
+  }
+
+  .mobile-header i {
+    font-size:24px;
+  }
+
+  .mobile-header .heading {
+    padding:12px;
+    box-shadow: unset;
+  }
+
+  .mobile-header h1 {
+    font-size:24px;
+    font-weight: normal;
+  }
+
+  /* Mobile menu items */
+
+  .mobile-menu-items {
+    display: flex;
+    background:#fff;
+    width:100%;
+    height:100vh;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .4s;
+  }
+
+  .mobile-menu-items ul {
+    margin-top: 64px;
+    list-style: none;
+    transform: all .4s;
+  }
+
+  .mobile-menu-items a {
+    text-decoration: none;
+    font-size:26px;
+    color:#222;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-items ul li {
+    margin: 24px 0;
+  }
+
+  .mobile-menu-items.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-items.active ul {
+    margin-top:0;
+  }
+
+  /* Mobile Searchbox */
+
+  .fa-times {
+    display: none;
+  }
+
+  .searchbox-mobile {
+    position: fixed;
+    width:100%;
+    display: block;
+    padding-top:0;
+    transition:all .4s;
+  }
+
+  .searchbox-mobile.active {
+    padding-top:52px;
+  }
+
+  .searchbox-mobile input[type="text"] {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    border:none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .searchbox-mobile input[type="text"]:focus {
+    outline: none;
+  }
+
+}
