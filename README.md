@@ -6,4 +6,4 @@ When the user scrolls down 300px we get to see the second versoin of the desktop
 
 Then we also have a mobile header.
 
-Take a look at the demo: 
+Take a look at the demo: https://godsont.github.io/Responsive-Animated-Header/
