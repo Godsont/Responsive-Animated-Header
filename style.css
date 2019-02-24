@@ -246,7 +246,7 @@ main h2 {
   .mobile-menu-items ul {
     margin-top: 64px;
     list-style: none;
-    transform: all .4s;
+    transition: all .4s;
   }
 
   .mobile-menu-items a {
